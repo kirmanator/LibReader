@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>
+    <p>Remove {{ title }}</p>
+</h2>
+<mat-dialog-content>
+    <p>Are you sure you want to remove {{ title }} from the library?</p>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-button (click)="removeBook()">Confirm</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

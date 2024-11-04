@@ -1,0 +1,15 @@
+<div class="booksContainer">
+    @for (book of featuredBooks(); track $index) {
+        <div class="bookRow">
+            <book [isbn]="book.isbn" [availability]="book.available" (click)="openBookDialog(book, '50ms', '10ms')"></book>
+            <div class="bookInfo">
+                <ul>
+                    <li>Title: {{ book.title}}</li>
+                    <li>Author: {{ book.author}}</li>
+                    <li>Description: {{ book.description}}</li>
+                    <li>*Add Ratings Here*</li>
+                </ul>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,17 @@
+.booksContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-top: calc(var(--header-size) + var(--mat-tab-header-size));
+}
+
+.bookRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+book:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}

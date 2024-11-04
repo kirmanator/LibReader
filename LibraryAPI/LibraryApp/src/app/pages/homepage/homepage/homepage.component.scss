@@ -1,0 +1,8 @@
+:host ::ng-deep mat-tab-header {
+    // top: var(--mat-tab-header-size);
+    bottom: 0;
+    z-index: 1000;
+    position: fixed;
+    background-color: azure;
+    width: 100%;
+}

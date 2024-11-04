@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Checkout {{ title }} </h2>
+<mat-dialog-content>
+    <p>Checking out {{ title }}<br><br>Please return by {{ dueDate() }}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-button (click)="checkoutBook()">Confirm</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

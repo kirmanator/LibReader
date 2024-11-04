@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="booksContainer">
+        @for (book of userBooks(); track $index) {
+            <div class="bookInfo">
+                <book [isbn]="book.isbn" [availability]="book.available"></book>
+                <span>Check out: {{ bookIdToCheckedOutMap.get(book.bookId) }}</span>
+            </div>
+        }
+    </div>
+</div>

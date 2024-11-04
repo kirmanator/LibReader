@@ -1,0 +1,81 @@
+<h2 mat-dialog-title>Information about {{ book.title }}</h2>
+<mat-dialog-content class="mat-typography">
+    @if (isAdmin()) {
+        <button mat-button (click)="startEditing()">Edit</button>
+        <button mat-button (click)="openRemoveDialog()">Remove</button>
+    }
+
+    @if (isEditing()) {
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput [formControl]="titleFormControl"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Author</mat-label>
+            <input matInput [formControl]="authorFormControl"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput [formControl]="descriptionFormControl"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Publisher</mat-label>
+            <input matInput [formControl]="publisherFormControl"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Publication Date</mat-label>
+            <input matInput [formControl]="publicationDateFormControl"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Genre</mat-label>
+            <input matInput [formControl]="genreFormControl"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>ISBN</mat-label>
+            <input matInput [formControl]="isbnFormControl"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Number of pages</mat-label>
+            <input matInput [formControl]="pageCountFormControl"/>
+        </mat-form-field>
+        <button mat-button (click)="stopEditing()" [disabled]="valid()">Save</button>
+    } 
+    @else {
+        @if (loadingReviews()) {
+            <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+        } @else if (reviews().length) {
+            <div class="ratingContainer">
+                @for(star of stars(); track $index) {
+                    <mat-icon [ngStyle]="{color: '#EAC452'}" fontIcon="{{star}}"></mat-icon>
+                }
+            </div>
+            <div class="reviewContainer">
+                <h3>Reviews</h3>
+                @for(review of reviews(); track $index) {
+                    <span>"{{ review.customerReview }}" - {{ review.username }}</span>
+                }
+            </div>
+        }
+        <p>Title: {{ book.title }}</p>
+        <p>Author: {{ book.author }}</p>
+        <p>Description: {{ book.description }}</p>
+        <p>Publisher: {{ book.publisher }}</p>
+        <p>Publication Date: {{ book.publicationDate }}</p>
+        <p>Genre: {{ book.genre }}</p>
+        <p>ISBN: {{ book.isbn }}</p>
+        <p>Number of pages: {{ book.pageCount }}</p>
+    }
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button 
+        mat-button
+        matTooltip="Book already checked out!"
+        [matTooltipDisabled]="available()"
+        [disabled]="!available()"
+        (click)="openCheckOutDialog()">
+            Check Out
+    </button>
+    <button mat-button>Leave a Review</button>
+    <button mat-button>Rate this book</button>
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

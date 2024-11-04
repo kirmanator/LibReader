@@ -1,0 +1,21 @@
+<search></search>
+<div class="container">
+    <div class="booksContainer">
+        @for (book of paginatedBooks(); track $index) {
+            <book [isbn]="book.isbn" [availability]="book.available" (click)="openBookDialog(book, '50ms', '10ms')"></book>
+        }
+    </div>
+    <div class="browseNav">
+        <button mat-button (click)="previousPage()">Prev</button>
+        <mat-form-field>
+            <mat-label>Page Size</mat-label>
+            <mat-select [formControl]="pageSizeControl">
+                <mat-option [value]="5">5</mat-option>
+                <mat-option [value]="10">10</mat-option>
+                <mat-option [value]="20">20</mat-option>
+                <mat-option [value]="50">50</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-button (click)="nextPage()">Next</button>
+    </div>
+</div>

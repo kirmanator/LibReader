@@ -1,0 +1,10 @@
+.header {
+    top: 0;
+    z-index: 1000;
+    position: fixed;
+    background-color: azure;
+    width: 100%;
+    height: var(--header-size);
+    display: flex;
+    justify-content: right;
+}

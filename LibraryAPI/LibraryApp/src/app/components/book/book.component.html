@@ -1,0 +1,8 @@
+
+@if (loading() || errorLoad()) {
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+}
+<div class="imageContainer">
+    <img [src]="imageSource()" [ngStyle]="{visibility:loading()?'hidden':'visible'}" (load)="hideLoader()" (error)="error()"/>
+    @if (!available()) {<mat-icon class="checkedOut" matTooltip="Checked out">logout</mat-icon>}
+</div>

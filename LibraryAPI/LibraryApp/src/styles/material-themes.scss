@@ -1,0 +1,7 @@
+/*@use '@angular/material' as mat;
+@use './color-theme' as color-theme;
+@include mat.core();
+
+body {
+    @include mat.all-component-themes(mat.m2-define-light-theme(color-theme.$theme-config));
+}*/

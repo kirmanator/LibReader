@@ -1,0 +1,6 @@
+<div class="header">
+    <button mat-button [matMenuTriggerFor]="account">{{ username() }} ({{ role() }})</button>
+    <mat-menu mat-menu #account="matMenu">
+        <button mat-menu-item (click)="logout()">Log Out</button>
+    </mat-menu>
+</div>

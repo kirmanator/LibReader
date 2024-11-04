@@ -1,0 +1,14 @@
+<mat-form-field class="searchbar" floatLabel="always">
+    <mat-label>Search</mat-label>
+    <input matInput 
+        [(ngModel)]="searchValue"
+        (keyup.enter)="executeSearch()"
+        autocomplete="off"
+    />
+    <button mat-icon-button matSuffix (click)="resetSearch()">
+        <mat-icon>undo</mat-icon>
+    </button>
+    <button mat-icon-button matSuffix (click)="executeSearch()">
+        <mat-icon>search</mat-icon>
+    </button>
+</mat-form-field>

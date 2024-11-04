@@ -1,0 +1,24 @@
+.booksContainer {
+    display: inline-grid;
+    column-gap: 0.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.browseNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--mat-tab-header-size);
+    width: 20%;
+}
+
+book:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}

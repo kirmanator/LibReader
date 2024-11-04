@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Lib Reader</h1>
+    <main>
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput #username [formControl]="usernameControl"/>
+            @if (usernameControl.errors?.required) {
+                <mat-error>Username is required</mat-error>
+            }
+            @if (usernameControl.errors?.usernameExists) {
+                <mat-error>Username already exists</mat-error>
+            }
+        </mat-form-field>
+        <div class="passwordContainer">
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" #password [formControl]="passwordControl"/>
+                @if (usernameControl.errors?.required) {
+                    <mat-error>Username is required</mat-error>
+                }
+            </mat-form-field>
+        </div>
+        <div class="buttonContainer">
+            <button mat-flat-button [disabled]="!valid()" (click)="createNewAccount()">Create Account</button>
+        </div>
+    </main>
+</div>

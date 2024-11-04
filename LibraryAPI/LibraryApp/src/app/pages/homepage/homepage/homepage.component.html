@@ -1,0 +1,19 @@
+<header></header>
+<mat-tab-group headerPosition="below">
+    <mat-tab label="Featured">
+        <mat-icon>book_4_spark</mat-icon>
+        <ng-template matTabContent>
+            <featured-books></featured-books>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="My Books">
+        <ng-template matTabContent>
+            <user-books></user-books>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Browse">
+        <ng-template matTabContent>
+            <browse-books></browse-books>
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>

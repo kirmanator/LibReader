@@ -1,0 +1,16 @@
+.ratingContainer {
+    display: flex;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+}
+
+.ratingContainer * {
+    margin-right: 0.5rem;
+}
+
+.reviewContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}

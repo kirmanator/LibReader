@@ -1,0 +1,15 @@
+.booksContainer {
+    display: inline-grid;
+    column-gap: 0.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.bookContainer {
+    display: flex;
+    flex-direction: column;
+}
